@@ -109,7 +109,7 @@ public class TransferUtils {
         String unitTitle;
 
         while (line != null) {
-            String[] split = line.split(",");
+            String[] split = line.split(";");
 
             if (split.length == 2) {
                 unitTitle = context.getString(R.string.database_uni_title_default);
@@ -119,8 +119,8 @@ public class TransferUtils {
                 throw new FormatException(String.valueOf(pos));
             }
 
-            String[] split1 = split[0].split(";");
-            String[] split2 = split[1].split(";");
+            String[] split1 = split[0].split(",");
+            String[] split2 = split[1].split(",");
 
             if (split1.length >= 1 && split2.length >= 1) {
                 MeaningList first = new MeaningList(new ArrayList<>(Arrays.asList(split1)));
